@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
-#ifndef PRINTF_H
-#define PRINTF_H
+#ifndef MAIN_H
+#define MAIN_H
 
 /**
  *

@@ -1,5 +1,4 @@
-#include "printf.h"
-#include <stdio.h>
+#include "main.h"
 
 /**
  * prinft - Output displayer with fomrat specifiers feature
