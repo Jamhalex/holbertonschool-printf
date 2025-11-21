@@ -6,7 +6,7 @@
  * return: 1 or error appoint
  */
 
-int _ptuhcar(char c)
+int _putchar(char c)
 {
-	return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }
