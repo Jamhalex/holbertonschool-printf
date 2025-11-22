@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * prinft - Output displayer with fomrat specifiers feature
- * return - Number of characters
+ * _printf - prints text with simple format codes
+ * @format: the message to print
  *
+ * Return: number of characters printed, or -1 on error
  */
+
 
 int _printf(const char *format, ...)
 {
@@ -13,14 +15,32 @@ int _printf(const char *format, ...)
 	int count = 0;
 	char *str;
 	char ch;
-
+	
+	/**
+	 * If format is NULL
+	 * returns the value -1 to indicate an error has occurred.	
+	 */
+	
 	if (format == NULL)
 	return(-1);
 	
 	va_start(ap, format);
 
+	/**
+	 * loop - parsing through the format string
+	 * statements - format handle instructions for %
+	 * 1. if nothing after % - invalid
+	 * 2. if % c - prints 1 character
+	 * 3. if % s - prints a string
+	 * 4. if % % - prints %
+	 * 5. if & d,i - prints unsigned,signed int
+	 * 6. if anything else after % - prints all
+	 */
+
+	
 	for (i = 0; format[i] != '\0'; i++)
 	{
+	       
 		if (format[i] == '%')
 		{
 			i++;
@@ -53,11 +73,17 @@ int _printf(const char *format, ...)
 				}
 			}
 
+			else if (format[i] == 'd' || format[i] == 'i')
+			  {
+			    count += print_int(ap);
+			  }
+
 			else if (format[i] == '%')
 			{
 				_putchar('%');
 				count++;
 			}
+
 
 			else 
 			{
@@ -67,6 +93,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		
+
 		else
 		{
 			_putchar(format[i]);
