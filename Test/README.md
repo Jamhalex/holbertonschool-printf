@@ -42,15 +42,19 @@ The implementation of the _printf()_ function is being carried out in the C prog
    Contributors
 This project was successfully accomplished through the collaborative efforts of :
 
-  Johnson Martinez:   [https://github.com/Jamhalex]
+  Johnson Martinez:   [GitHub Profile](completar la informacion de github personal desde su branch)
+[LinkedIn Profile](https://www.linkedin.com completar la informacion ?????)
 
-Hello, I'm Johnson Martinez, one of the developers behind this project. I invite you to explore my work and connect with me professionally on GitHub. I look forward to networking and sharing ideas with you!
+Hello, I'm Johnson Martinez, one of the developers behind this project. (haga los cambios pertinentes que sean necesarios y su valos e su branch)
 
-  Eloy A. Alicea Sánchez :   [GitHub Profile]
+  Eloy A. Alicea Sánchez :   [GitHub Profile](completar la informacion github desde su brach) 
+[LinkedIn Profile](https://www.linkedin.com completar la informacion faltante desde su branch)
 
-Hi there! I'm Eloy A. Alice, a passionate developer and contributor to this project. Feel free to check out my work and connect with me on GitHub and LinkedIn. I’m always excited to network and exchange ideas with fellow professionals!
+Hi there! I'm Eloy, a passionate developer and contributor to this project. ( lea la informcaion y haga los cmabios que necesite pertinentes)
 
 
   Eugenio Martinez :   [GitHub Profile]( https://github.com/Krotos69)
+[LinkedIn Profile](https://www.linkedin.com)
 
 Best regards! I'm Eugen Martinez, a creative, passionate, and highly motivated developer, and a contributor to this project.  I'm always excited to connect and exchange ideas with other professionals and learn from them!
+
