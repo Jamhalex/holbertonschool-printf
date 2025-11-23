@@ -7,19 +7,19 @@
 The Printf Project is a tailored reimplementation of the standard C library function printf. Its purpose is to replicate the functionality of printf by supporting selected format specifiers, while also providing developers with a deeper understanding of variadic functions and low-level system calls.
      Purpose
 The purpose of this project is to:
-  Strengthen understanding of C programming concepts such as variadic functions, memory allocation, and system calls.
+  Strengthen understanding of C programming concepts and system calls.
   Build a foundational understanding of how standard library functions are implemented.
   Foster collaboration through team-based development.
 
     Main Features
-  Custom implementation of the _printf_ function.
+  Custom implementation of the _printf function.
   Support for a subset of printf conversion specifiers.
   Extensive testing to ensure reliability and consistency.
 
     Intended Audience
 This project is designed for:
   Holberton students learning the intricacies of C programming.
-  Developers interested in understanding how functions like _printf_ are implemented under the hood.
+  Developers interested in understanding how functions like _printf are implemented under the hood.
 
    Supported Specifiers
 
@@ -30,6 +30,8 @@ A format specifier is a special sequence of characters used in formatted input a
 |------------------|-------------------------------------------|----------------------|
 | %c               | Prints a single character                 | Input: %c -> H       |
 | %s               | Prints a string of characters             | Input: %s -> Hello   |
+| %d               | Prints a signed decimal integer           | Input: %d -> 42      |
+| %i               | Prints a signed integer (identical to %d) | Input: %i -> 42      |
 | %                | Prints a literal % character              | Input: %% -> %       |
 
     Compilation Instructions
@@ -46,7 +48,7 @@ This project was successfully accomplished through the collaborative efforts of 
 
 Hello, I'm Johnson Martinez, one of the developers behind this project. I invite you to explore my work and connect with me professionally on GitHub. I look forward to networking and sharing ideas with you!
 
-  Eloy A. Alicea Sánchez :   [GitHub Profile]
+  Eloy A. Alicea Sánchez :   [[GitHub Profile\]](https://github.com/eloyarnel)
 
 Hi there! I'm Eloy A. Alice, a passionate developer and contributor to this project. Feel free to check out my work and connect with me on GitHub and LinkedIn. I’m always excited to network and exchange ideas with fellow professionals!
 
