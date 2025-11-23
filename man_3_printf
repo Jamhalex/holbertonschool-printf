@@ -1,0 +1,104 @@
+.TH _PRINTF 3 "November 22, 2025" "_printf Manual pages" "Library Functions Manual"
+.SH NAME
+_printf \- custom implementation of printf with basic format specifiers
+.SH SYNOPSIS
+.nf
+#include "main.h"
+
+int _printf(const char *format, ...);
+.fi
+.SH DESCRIPTION
+The
+.B _printf
+function produces output according to a format string and a variable number of arguments.
+Output is written to the standard output stream
+.BR stdout .
+
+The
+.I format
+string is composed of ordinary characters (which are copied unchanged to the output stream)
+and conversion specifiers, each introduced by the '%' character.
+
+This simplified version of
+.B printf
+supports the following conversion specifiers:
+
+.TP
+.B %c
+Prints a single character.
+
+.TP
+.B %s
+Prints a string of characters. If the string pointer is NULL, the string "(null)" is printed.
+
+.TP
+.B %d, %i
+Prints a signed integer using the helper function
+.BR print_int() .
+
+.TP
+.B %%
+Prints a literal '%' character.
+
+.TP
+Any other character following '%'
+is printed literally, preceded by '%'.
+
+.SH RETURN VALUE
+On success,
+.B _printf
+returns the number of characters printed (excluding the terminating null byte).
+On error (such as a NULL format string or an incomplete format specifier at the end),
+.B -1
+is returned.
+
+.SH ERRORS
+.TP
+.B -1
+Returned if
+.I format
+is NULL or if a '%' is followed by the end of the string.
+
+.SH NOTES
+This implementation does not handle:
+.IP 
+
+\[bu] 2
+Buffering optimizations of the standard C library
+.IP 
+
+\[bu] 2
+Flag characters
+.IP 
+
+\[bu] 2
+Field width
+.IP 
+
+\[bu] 2
+Precision
+.IP 
+
+\[bu] 2
+Length modifiers
+
+It is intended as a learning exercise to mimic the behavior of
+.BR printf (3)
+with limited functionality.
+
+.SH EXAMPLE
+.nf
+_printf("Hello %s! Number: %d%%\\n", "World", 42);
+.fi
+This prints:
+.nf
+Hello World! Number: 42%
+.fi
+
+.SH SEE ALSO
+.BR printf (3),
+.BR putchar (3)
+
+.SH AUTHORS Johnson A Martinez, Eloy A. Alicea and Eugenio Martinez.
+
+
