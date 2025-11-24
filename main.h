@@ -13,5 +13,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int print_int(va_list ap);
 int print_unsigned(unsigned int n);
-
+int print_binary(unsigned int n);
+int print_unsigned_base(unsigned int n, int base, int uppercase);
 #endif 

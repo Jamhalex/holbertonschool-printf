@@ -7,7 +7,6 @@
  * Return: number of characters printed, or -1 on error
  */
 
-
 int _printf(const char *format, ...)
 {
 	va_list ap;
@@ -77,13 +76,38 @@ int _printf(const char *format, ...)
 			  {
 			    count += print_int(ap);
 			  }
+			else if (format[i] == 'b')
+			{	
+				unsigned int n = va_arg(ap, unsigned int);
+			    count += print_binary(n);
+			}
+			
+			else if (format[i] == 'u')
+			{
+   			 unsigned int num = va_arg(ap, unsigned int);
+   			 count += print_unsigned_base(num, 10, 0);
+			}
+			else if (format[i] == 'o')
+			{
+  			  unsigned int num = va_arg(ap, unsigned int);
+  			  count += print_unsigned_base(num, 8, 0);
+			}
+			else if (format[i] == 'x')
+			{
+				unsigned int num = va_arg(ap, unsigned int);
+				count += print_unsigned_base(num, 16, 0);
+			}
+			else if (format[i] == 'X')
+			{
+				unsigned int num = va_arg(ap, unsigned int);
+				count += print_unsigned_base(num, 16, 1);
+}
 
 			else if (format[i] == '%')
 			{
 				_putchar('%');
 				count++;
 			}
-
 
 			else 
 			{
