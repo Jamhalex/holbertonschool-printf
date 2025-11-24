@@ -7,7 +7,7 @@
 The Printf Project is a tailored reimplementation of the standard C library function printf. Its purpose is to replicate the functionality of printf by supporting selected format specifiers, while also providing developers with a deeper understanding of variadic functions and low-level system calls.
      Purpose
 The purpose of this project is to:
-  Strengthen understanding of C programming concepts and system calls.
+  Strengthen understanding of C programming concepts and exercise in variadic functions, format parsing, and modular design.
   Build a foundational understanding of how standard library functions are implemented.
   Foster collaboration through team-based development.
 
@@ -24,7 +24,7 @@ This project is designed for:
    Supported Specifiers
 
     What is a format specifier?
-A format specifier is a special sequence of characters used in formatted input and output functions (like printf, scanf) to define how data should be formatted and displayed or read.
+A format specifier is a special sequence of characters used in formatted input and output functions (like printf) to define how data should be formatted and displayed or read.
 
 | Format Specifier | Description                               | Example Output       |
 |------------------|-------------------------------------------|----------------------|
@@ -32,6 +32,11 @@ A format specifier is a special sequence of characters used in formatted input a
 | %s               | Prints a string of characters             | Input: %s -> Hello   |
 | %d               | Prints a signed decimal integer           | Input: %d -> 42      |
 | %i               | Prints a signed integer (identical to %d) | Input: %i -> 42      |
+| %b               | Prints a Unsined integer (binary)         | Input: %b -> 1100001 |
+| %u               | Prints a Unsined integer                  | Input: %u -> 300     |
+| %o               | Prints a Unsined octal 			       | Input: %o -> 100     |
+| %x               | Prints a Unsined hexadecimal (lower)      | Input: %x -> abcde   |
+| %X               | Prints a Unsined hexadecimal (UPPERC)     | Input: %X -> ABCDE   |
 | %                | Prints a literal % character              | Input: %% -> %       |
 
     Compilation Instructions
@@ -39,16 +44,16 @@ All the files that were used are compiled using:
 'gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c'
 
    Language
-The implementation of the _printf()_ function is being carried out in the C programming language. As a low-level language, C provides the flexibility to construct and manage funtions from the ground up, allowing us to precisely define their behavior and outputs. At this stage, we are still building our foundational knowledge of C, and this projects serves as a practical exercise to reinforce our understanding by recreating _printf()_ entirely from scratch.
+The implementation of the _printf() function is being carried out in the C programming language. As a low-level language, C provides the flexibility to construct and manage funtions from the ground up, allowing us to precisely define their behavior and outputs. At this stage, we are still building our foundational knowledge of C, and this projects serves as a practical exercise to reinforce our understanding by recreating _printf() entirely from scratch.
 
    Contributors
-This project was successfully accomplished through the collaborative efforts of :
+This project was successfully carried out through collaboration:
 
-  Johnson Martinez:   [https://github.com/Jamhalex]
+  Johnson Martinez:   [GitHUB profile](https://github.com/Jamhalex)
 
 Hello, I'm Johnson Martinez, one of the developers behind this project. I invite you to explore my work and connect with me professionally on GitHub. I look forward to networking and sharing ideas with you!
 
-  Eloy A. Alicea Sánchez :   [[GitHub Profile\]](https://github.com/eloyarnel)
+  Eloy A. Alicea Sánchez :   [GitHub Profile](https://github.com/eloyarnel)
 
 Hi there! I'm Eloy A. Alice, a passionate developer and contributor to this project. Feel free to check out my work and connect with me on GitHub and LinkedIn. I’m always excited to network and exchange ideas with fellow professionals!
 
