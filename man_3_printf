@@ -1,104 +1,88 @@
-.TH _PRINTF 3 "November 22, 2025" "_printf Manual pages" "Library Functions Manual"
+.TH _PRINTF 3 "November 24, 2025" "_printf Manual Pages" "Functions Manual"
 .SH NAME
-_printf \- custom implementation of printf with basic format specifiers
+_printf \- custom implementation of the printf function
 .SH SYNOPSIS
 .nf
-#include "main.h"
+_printf(const char *format, ...);
 
-int _printf(const char *format, ...);
 .fi
 .SH DESCRIPTION
 The
 .B _printf
-function produces output according to a format string and a variable number of arguments.
-Output is written to the standard output stream
-.BR stdout .
+function produces output according to a format string.
+It mimics the standard C library
+.BR printf (3)
+with support for a subset of format specifiers.
 
 The
 .I format
-string is composed of ordinary characters (which are copied unchanged to the output stream)
-and conversion specifiers, each introduced by the '%' character.
-
-This simplified version of
-.B printf
-supports the following conversion specifiers:
+string is parsed character by character. Ordinary characters are written
+to standard output. Conversion specifiers introduced by
+.B %
+are interpreted as follows:
 
 .TP
 .B %c
-Prints a single character.
-
+Print a single character.
 .TP
 .B %s
-Prints a string of characters. If the string pointer is NULL, the string "(null)" is printed.
-
+Print a string. If the string is NULL, "(null)" is printed.
 .TP
 .B %d, %i
-Prints a signed integer using the helper function
-.BR print_int() .
-
+Print a signed integer in decimal.
+.TP
+.B %b
+Print an unsigned integer in binary.
+.TP
+.B %u
+Print an unsigned integer in decimal.
+.TP
+.B %o
+Print an unsigned integer in octal.
+.TP
+.B %x
+Print an unsigned integer in hexadecimal (lowercase).
+.TP
+.B %X
+Print an unsigned integer in hexadecimal (uppercase).
 .TP
 .B %%
-Prints a literal '%' character.
-
+Print a literal percent sign.
 .TP
-Any other character following '%'
-is printed literally, preceded by '%'.
+Any other character following
+.B %
+is printed verbatim, preceded by
+.B % .
 
-.SH RETURN VALUE
-On success,
-.B _printf
-returns the number of characters printed (excluding the terminating null byte).
-On error (such as a NULL format string or an incomplete format specifier at the end),
-.B -1
-is returned.
-
-.SH ERRORS
-.TP
-.B -1
-Returned if
+If
 .I format
-is NULL or if a '%' is followed by the end of the string.
-
-.SH NOTES
-This implementation does not handle:
-.IP 
-
-\[bu] 2
-Buffering optimizations of the standard C library
-.IP 
-
-\[bu] 2
-Flag characters
-.IP 
-
-\[bu] 2
-Field width
-.IP 
-
-\[bu] 2
-Precision
-.IP 
-
-\[bu] 2
-Length modifiers
-
-It is intended as a learning exercise to mimic the behavior of
-.BR printf (3)
-with limited functionality.
-
-.SH EXAMPLE
+is NULL or an incomplete specifier is encountered, the function returns
+.B -1
+to indicate an error.
+.SH RETURN VALUE
+The function returns the number of characters printed, or
+.B -1
+if an error occurs.
+.SH EXAMPLES
 .nf
-_printf("Hello %s! Number: %d%%\\n", "World", 42);
-.fi
-This prints:
-.nf
-Hello World! Number: 42%
-.fi
+_printf("Hello %s!\\n", "world");
+   prints: Hello world!
 
+_printf("Binary: %b\\n", 5);
+   prints: Binary: 101
+
+_printf("Hex: %x, Octal: %o\\n", 255, 255);
+   prints: Hex: ff, Octal: 377
+.fi
+.SH FILES
+main.h
+.br
+_putchar.c
+.br
+_printf.c
+.br
+numbers.c
 .SH SEE ALSO
-.BR printf (3),
-.BR putchar (3)
-
-.SH AUTHORS Johnson A Martinez, Eloy A. Alicea and Eugenio Martinez.
-
-
+printf(3)
+.SH AUTHOR
+Written by Johnson A Martinez, Eloy A. Alicea, Eugenio Martinez programming project.
